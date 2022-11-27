@@ -1,0 +1,105 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+header {
+  background-color: royalblue;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../Assets/header.webp");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .overlay {
+    @include overlay(rgb(0, 18, 65), 0.6, 1);
+  }
+  .headerContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .images {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .content {
+      padding: 0 20px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      h2 {
+        font-size: 30px;
+        line-height: 1.4;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 25px;
+      }
+      p {
+        color: #fff;
+        font-size: 19px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+        button {
+          padding: 7px 10px;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 500;
+          color: #fff;
+          background-color: $mainColor;
+          border: none;
+          outline: none;
+          transition: background-color $hoverTransition, color $hoverTransition;
+          cursor: pointer;
+          border: 2px solid $mainColor;
+        }
+        button.primary:hover {
+          background-color: transparent;
+          color: $mainColor;
+        }
+        button:not(.primary) {
+          background-color: transparent;
+          color: $mainColor;
+        }
+      }
+      @include mediaQuery(small) {
+        h2 {
+          font-size: 40px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 1.6;
+        }
+        .buttons button {
+          padding: 8px 30px;
+          font-size: 17px;
+        }
+      }
+      @include mediaQuery(meduim) {
+        h2 {
+          font-size: 60px;
+        }
+        p {
+          font-size: 22px;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+}

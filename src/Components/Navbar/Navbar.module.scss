@@ -1,0 +1,202 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+.navbar {
+  width: 100%;
+  position: relative;
+  .mainNav {
+    .navbarContainer {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        width: 100px;
+        img {
+          width: 100%;
+        }
+      }
+      button {
+        padding: 7px 10px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        background-color: $mainColor;
+        border: 1px solid #fff;
+        outline: none;
+        transition: background-color $hoverTransition, color $hoverTransition;
+        cursor: pointer;
+        &:hover {
+          background-color: #fff;
+          color: $mainColor;
+        }
+      }
+      > svg {
+        font-size: 30px;
+        cursor: pointer;
+        order: 199;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: -80%;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        overflow: scroll;
+        transition: left $movementTransition;
+        z-index: 5;
+        > svg {
+          font-size: 40px;
+          width: 100%;
+          cursor: pointer;
+        }
+        > nav {
+          > li {
+            overflow: hidden;
+            > a {
+              padding: 10px;
+              background-color: #ddd;
+              border-bottom: 1px solid #fff;
+              font-size: 16px;
+              font-weight: 600;
+              text-transform: uppercase;
+              font-family: "Cairo", sans-serif;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              svg {
+                margin-left: 5px;
+              }
+            }
+            nav {
+              height: 0;
+              transition: height $movementTransition;
+              li a {
+                width: 100%;
+                display: block;
+                padding: 5px 0 5px 15px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-family: "Cairo", sans-serif;
+              }
+              &.show1 {
+                height: 148px;
+              }
+              &.show2 {
+                height: 74px;
+              }
+            }
+          }
+        }
+        &.show {
+          left: 0;
+        }
+      }
+      @include mediaQuery(small) {
+        &.sticky {
+          top: 0;
+          position: fixed;
+          background-color: #ffffff;
+          box-shadow: 0 3px 50px rgba(0, 0, 0, 0.2);
+          left: 0;
+          z-index: 600;
+          background-color: rebeccapurple;
+        }
+        padding: 15px 0;
+        button {
+          padding: 10px 15px;
+          font-size: 16px;
+        }
+        .nav {
+          width: 50%;
+        }
+      }
+      @include mediaQuery(meduim) {
+        .logo {
+          width: 140px;
+        }
+        > svg {
+          display: none;
+        }
+        .nav {
+          position: unset;
+          top: unset;
+          left: unset;
+          width: unset;
+          height: fit-content;
+          overflow: unset;
+          box-shadow: none;
+          > svg {
+            display: none;
+          }
+          > nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > li {
+              overflow: visible;
+              position: relative;
+              a:hover {
+                color: $mainColor;
+              }
+              > a {
+                font-size: 15px;
+                padding: 10px;
+                background-color: #fff;
+                border-bottom: none;
+                svg {
+                  margin-left: 5px;
+                }
+              }
+              nav {
+                height: fit-content;
+                opacity: 0;
+                visibility: hidden;
+                width: 160px;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                transition: opacity $hoverTransition,
+                  visibility $hoverTransition;
+              }
+              &.hasDown:hover nav {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+      @include mediaQuery(large) {
+        .nav {
+          > nav {
+            li a {
+              font-size: 17px;
+              transition: color $hoverTransition;
+            }
+          }
+        }
+      }
+    }
+    @include mediaQuery(small) {
+      &.sticky {
+        top: 0;
+        width: 100%;
+        position: fixed;
+        background-color: #ffffff;
+        box-shadow: 0 3px 50px rgba(0, 0, 0, 0.2);
+        left: 0;
+        z-index: 600;
+      }
+    }
+  }
+}

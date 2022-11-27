@@ -1,0 +1,53 @@
+@import "../../../Helpers/mixins";
+@import "../../../Helpers/variables";
+
+.infoNav {
+  width: 100%;
+  background-color: #eee;
+  height: 40px;
+  line-height: 40px;
+  .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .contact {
+      flex: 1;
+      a {
+        position: relative;
+        margin-right: 15px;
+        svg {
+          color: $mainColor;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+    .icons {
+      svg {
+        color: rgb(123, 121, 121);
+        margin-left: 5px;
+      }
+    }
+  }
+  @include mediaQuery(meduim) {
+    .infoContainer {
+      .contact {
+        a {
+          display: inline-flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row;
+          svg {
+            margin-right: 5px;
+          }
+          span {
+            display: inline;
+            font-size: 16px;
+            color: rgb(123, 121, 121);
+          }
+        }
+      }
+    }
+  }
+}
