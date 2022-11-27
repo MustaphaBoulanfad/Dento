@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import { BsList, BsChevronDown, BsX } from "react-icons/bs";
 import Container from "../../Layouts/Container/Container";
 import Logo from "../../Assets/logo.webp";
 import InfoNav from "./InfoNav/InfoNav";
+import { useSelector, useDispatch } from "react-redux";
+import { changeInnerWidth } from "../../Store/MedicalSlice";
 
 const Navbar = () => {
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const innerWidth = useSelector((state) => state.innerWidth);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(changeInnerWidth(window.innerWidth));
     const liHasDown = [...document.getElementsByClassName(styles.hasDown)];
     if (innerWidth <= 800) {
       liHasDown.forEach((element) => {
         element.addEventListener("click", (event) => {
-          console.log("yes");
           event.preventDefault();
           element.id === "1"
             ? element.childNodes[1].classList.toggle(styles.show1)
@@ -21,10 +24,10 @@ const Navbar = () => {
         });
       });
     }
-  }, [innerWidth]);
+  }, [dispatch, innerWidth]);
 
   window.addEventListener("resize", () => {
-    setInnerWidth(window.innerWidth);
+    dispatch(changeInnerWidth(window.innerWidth));
   });
 
   window.addEventListener("scroll", () => {

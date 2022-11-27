@@ -1,0 +1,44 @@
+@import "../../../Helpers/mixins";
+@import "../../../Helpers/variables";
+
+.AboutInfo {
+  width: 100%;
+  padding: $sectionPadding 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .item {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    svg {
+      font-size: 60px;
+      color: $mainColor;
+    }
+    p {
+      font-size: 35px;
+      font-weight: 400;
+      color: $paragraphColor;
+    }
+    h3 {
+      font-size: 22px;
+      color: $headingColor;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+  @include mediaQuery(small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .item {
+      width: 45%;
+    }
+  }
+  @include mediaQuery(meduim) {
+    .item {
+      width: 23%;
+    }
+  }
+}
