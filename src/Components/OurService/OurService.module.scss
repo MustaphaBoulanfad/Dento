@@ -1,0 +1,97 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+.OurService {
+  background-image: url("../../Assets/serviceBack.webp");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: $sectionPadding 0;
+  .overlay {
+    @include overlay(rgb(0, 18, 65), 0.6, 1);
+  }
+  .serviceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .content {
+      z-index: 2;
+      width: 100%;
+      margin-bottom: 25px;
+      h1 {
+        color: #fff;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 10px 0;
+        margin-bottom: 25px;
+        position: relative;
+        width: fit-content;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 60%;
+          height: 5px;
+          background-color: $mainColor;
+        }
+      }
+      .services {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        .item {
+          text-align: left;
+          width: 50%;
+          margin-bottom: 40px;
+          p {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+        @include mediaQuery(small) {
+          .item {
+            width: 30%;
+          }
+        }
+      }
+    }
+    .image {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+      img {
+        width: 100%;
+      }
+      a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: royalblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+    }
+    @include mediaQuery(1000px) {
+      flex-direction: row;
+      gap: 20px;
+      .content {
+        margin-bottom: 0;
+        height: 100%;
+        h1 {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}

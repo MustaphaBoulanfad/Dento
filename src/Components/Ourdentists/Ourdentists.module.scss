@@ -1,0 +1,124 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+section.ourdentists {
+  width: 100%;
+  padding: $sectionPadding 0;
+  .dentistsContainer {
+    h1 {
+      color: $headingColor;
+      font-size: 30px;
+      font-weight: 600;
+      padding: 10px 0;
+      margin: 0 auto 25px;
+      position: relative;
+      width: fit-content;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 5px;
+        background-color: $mainColor;
+      }
+    }
+    .dentists {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      $index: 1, 2, 3;
+      @each $id in $index {
+        .dentist-#{$id} {
+          background-image: url("../../Assets/dentist#{$id}.webp");
+          background-position: center;
+          background-size: cover;
+        }
+      }
+      .dentist {
+        background-color: #eee;
+        width: 100%;
+        height: 360px;
+        margin-bottom: 15px;
+        position: relative;
+        .info {
+          width: 100%;
+          height: fit-content;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          text-align: center;
+          background-color: rgba(2, 11, 33, 0.723);
+          padding: 7px;
+          line-height: 1.5;
+          h3 {
+            color: #fff;
+          }
+          p {
+            font-size: 15px;
+            font-weight: 400;
+            color: #fff;
+          }
+        }
+        .social {
+          width: 100%;
+          position: absolute;
+          top: 60%;
+          left: 0;
+          text-align: center;
+          a {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: $mainColor;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $hoverTransition, visibility $hoverTransition,
+              color $hoverTransition, background-color $hoverTransition;
+            &:hover {
+              background-color: $mainColor;
+              color: #fff;
+            }
+          }
+        }
+        &:hover .social a {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      @include mediaQuery(small) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        .dentist {
+          width: 45%;
+          height: 260px;
+        }
+      }
+      @include mediaQuery(750px) {
+        .dentist {
+          width: 240px;
+          height: 240px;
+          .social {
+            top: 50%;
+          }
+        }
+      }
+      @include mediaQuery(900px) {
+        .dentist {
+          width: 30%;
+          height: 350px;
+        }
+      }
+    }
+  }
+}

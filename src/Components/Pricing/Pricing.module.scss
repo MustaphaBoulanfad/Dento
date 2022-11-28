@@ -1,0 +1,80 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+section.pricing {
+  width: 100%;
+  padding: $sectionPadding 0;
+  .pricingContainer {
+    h1 {
+      color: $headingColor;
+      font-size: 30px;
+      font-weight: 600;
+      padding: 10px 0;
+      margin: 0 auto 25px;
+      position: relative;
+      width: fit-content;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 5px;
+        background-color: $mainColor;
+      }
+    }
+    table {
+      width: 100%;
+      text-align: left;
+      thead {
+        background-color: $mainColor;
+        tr th {
+          padding: 5px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+      tbody {
+        background-color: #eee;
+        tr td {
+          padding: 5px;
+          font-size: 14px;
+          font-weight: 700;
+          color: $paragraphColor;
+        }
+      }
+    }
+    button {
+      padding: 7px 10px;
+      margin: 25px auto 0;
+      display: block;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      background-color: $mainColor;
+      border: 1px solid $mainColor;
+      outline: none;
+      transition: background-color $hoverTransition, color $hoverTransition;
+      cursor: pointer;
+      &:hover {
+        background-color: #fff;
+        color: $mainColor;
+      }
+    }
+    @include mediaQuery(meduim) {
+      h1 {
+        font-size: 35px;
+      }
+      table {
+        thead tr th,
+        tbody tr td {
+          font-size: 16px;
+          padding: 7px;
+        }
+      }
+    }
+  }
+}
