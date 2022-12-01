@@ -6,6 +6,8 @@ import OurService from "../Components/OurService/OurService";
 import Pricing from "../Components/Pricing/Pricing";
 import Book from "../Components/Book/Book";
 import Ourdentists from "../Components/Ourdentists/Ourdentists";
+import Patients from "../Components/Patients/Patients";
+import LatestNews from "../Components/LatestNews/LatestNews";
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
       <Pricing />
       <Book />
       <Ourdentists />
+      <Patients />
+      <LatestNews />
     </Fragment>
   );
 };

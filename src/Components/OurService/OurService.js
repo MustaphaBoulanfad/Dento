@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./OurService.module.scss";
 import Container from "../../Layouts/Container/Container";
-import teeth1 from "../../Assets/teeth1.webp";
-import teeth2 from "../../Assets/teeth2.webp";
-import teeth3 from "../../Assets/teeth3.webp";
-import teeth4 from "../../Assets/teeth4.webp";
-import teeth5 from "../../Assets/teeth5.webp";
-import teeth6 from "../../Assets/teeth6.webp";
+import {
+  teeth1,
+  teeth2,
+  teeth3,
+  teeth4,
+  teeth5,
+  teeth6,
+} from "../../Assets/index";
 import serviceImage from "../../Assets/serviceImage.webp";
 import { BsFillPlayFill } from "react-icons/bs";
 
