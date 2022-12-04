@@ -8,6 +8,7 @@ import Book from "../Components/Book/Book";
 import Ourdentists from "../Components/Ourdentists/Ourdentists";
 import Patients from "../Components/Patients/Patients";
 import LatestNews from "../Components/LatestNews/LatestNews";
+import Footer from "../Components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Ourdentists />
       <Patients />
       <LatestNews />
+      <Footer />
     </Fragment>
   );
 };
