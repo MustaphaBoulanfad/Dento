@@ -1,0 +1,62 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+section.services {
+  width: 100%;
+  padding: $sectionPadding 0;
+  .servicesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    .service {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        padding: 15px;
+        box-shadow: none;
+        transition: box-shadow $hoverTransition;
+        img {
+          width: 100%;
+        }
+      }
+      h5 {
+        font-size: 22px;
+        color: $headingColor;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      p {
+        color: $paragraphColor;
+        line-height: 1.7;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      &:hover .icon {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+    }
+    @include mediaQuery(small) {
+      .service {
+        width: 48%;
+      }
+    }
+    @include mediaQuery(960px) {
+      .service {
+        width: 30%;
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
