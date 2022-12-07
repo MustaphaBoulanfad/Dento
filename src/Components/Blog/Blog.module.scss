@@ -1,0 +1,233 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+section.blog {
+  width: 100%;
+  padding: $sectionPadding 0;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .blogContainer {
+      width: 100%;
+      margin-bottom: 50px;
+      .blogs {
+        width: 100%;
+        .blogItem a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 25px;
+          .image {
+            width: 100%;
+            height: 240px;
+            img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .content {
+            padding: 10px;
+            width: 100%;
+            h4 {
+              font-size: 20px;
+              color: $headingColor;
+              font-weight: 700;
+              line-height: 1.3;
+              margin-bottom: 10px;
+              transition: color $hoverTransition;
+              cursor: pointer;
+            }
+            p {
+              font-size: 16px;
+              line-height: 1.5;
+              color: $paragraphColor;
+              font-weight: 400;
+            }
+            div {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 15px;
+              margin-top: 10px;
+              span {
+                display: flex;
+                align-items: center;
+                color: $paragraphColor;
+                svg {
+                  color: $mainColor;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+          &:hover .content h4 {
+            color: $mainColor;
+          }
+          @include mediaQuery(small) {
+            flex-direction: row;
+            gap: 20px;
+            > div {
+              flex: 1;
+            }
+            .content {
+              padding: 0;
+            }
+          }
+        }
+        .navigation {
+          width: 100;
+          span {
+            width: 40px;
+            cursor: pointer;
+            height: 40px;
+            font-size: 18px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            color: $paragraphColor;
+            border-radius: 5px;
+            margin-right: 5px;
+            transition: color $hoverTransition,
+              background-color $hoverTransition;
+            &.active,
+            &:hover {
+              background-color: $mainColor;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .sideBar {
+      width: 100%;
+      > div:not(.adds) {
+        margin-bottom: 40px;
+      }
+      .search {
+        z-index: 2;
+        overflow: hidden;
+        form {
+          position: relative;
+          width: 100%;
+          height: 45px;
+          input {
+            border: 1px solid $paragraphColor;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            transition: border $hoverTransition;
+            &:focus {
+              border: 1px solid $mainColor;
+            }
+          }
+          button {
+            position: absolute;
+            right: 10px;
+            top: 14px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            color: $paragraphColor;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .categories {
+        h3 {
+          font-size: 24px;
+          color: $headingColor;
+          margin-bottom: 15px;
+          font-weight: 700;
+        }
+        ul li a {
+          font-size: 17px;
+          font-weight: 400;
+          display: block;
+          padding: 10px 0;
+          border-bottom: 1px solid $paragraphColor;
+          color: $paragraphColor;
+          transition: color $hoverTransition;
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+      .recent {
+        width: 100%;
+        h3 {
+          font-size: 24px;
+          color: $headingColor;
+          margin-bottom: 15px;
+          font-weight: 700;
+        }
+        .news {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          .image {
+            width: 110px;
+            height: 80px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .content {
+            flex: 3;
+            margin-left: 15px;
+            line-height: 1.5;
+            a {
+              display: block;
+              color: $headingColor;
+              font-size: 17px;
+              font-weight: 600;
+              transition: color $hoverTransition;
+              &:hover {
+                color: $mainColor;
+              }
+            }
+            span {
+              font-size: 13px;
+              font-weight: 500;
+              color: $paragraphColor;
+            }
+          }
+        }
+      }
+      .adds {
+        width: 100%;
+        a {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @include mediaQuery(large) {
+      flex-direction: row;
+      gap: 40px;
+      .blogContainer {
+        flex: 2;
+      }
+      .sideBar {
+        flex: 1;
+      }
+    }
+  }
+}
