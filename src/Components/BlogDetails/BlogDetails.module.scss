@@ -1,0 +1,424 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+section.blogDetails {
+  width: 100%;
+  padding: $sectionPadding 0;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .blogDetailsContainer {
+      width: 100%;
+      margin-bottom: 50px;
+      > div {
+        padding: 40px 0;
+      }
+      .image {
+        width: 100%;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      h1 {
+        font-size: 38px;
+        color: $headingColor;
+        font-weight: 500;
+      }
+      .time {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        span {
+          display: flex;
+          align-items: center;
+          color: $paragraphColor;
+          svg {
+            color: $mainColor;
+            margin-right: 5px;
+          }
+        }
+      }
+      .blog > p {
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 600;
+        color: $paragraphColor;
+        margin: 15px 0;
+      }
+      .quote {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 15px 0;
+        gap: 20px;
+        svg {
+          font-size: 50px;
+          color: $paragraphColor;
+        }
+        .content {
+          h4 {
+            font-size: 19px;
+            font-weight: 400;
+            color: $paragraphColor;
+            font-style: italic;
+          }
+          p {
+            font-size: 20px;
+            font-weight: 600;
+            color: $headingColor;
+            span {
+              color: $mainColor;
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        margin-top: 20px;
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px 10px;
+          border-radius: 3px;
+          font-size: 14px;
+          color: #fff;
+          svg {
+            margin-right: 3px;
+          }
+          &.facebook {
+            background-color: #4b6cd0;
+          }
+          &.twitter {
+            background-color: #49a7f3;
+          }
+          &.google {
+            background-color: #d34836;
+          }
+          &.pinterest {
+            background-color: #bd081c;
+          }
+          @include mediaQuery(meduim) {
+            padding: 7px 20px;
+            font-size: 16px;
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+      .comments {
+        border-top: 1px solid grey;
+        h2 {
+          color: $headingColor;
+        }
+        .commentsContainer {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+          width: 100%;
+          padding: 30px 0;
+          li {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            .comment {
+              width: 100%;
+              background-color: #eee;
+              display: flex;
+              padding: 20px;
+              .image {
+                margin-right: 20px;
+                width: 50px;
+                min-width: 50px;
+                img {
+                  width: 100%;
+                  border-radius: 50%;
+                }
+              }
+              .content {
+                p.name {
+                  user-select: none;
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: $headingColor;
+                  margin-bottom: 10px;
+                  cursor: pointer;
+                  transition: color $hoverTransition;
+                  span {
+                    font-size: 12px;
+                    color: $paragraphColor;
+                    font-weight: 400;
+                    margin-left: 5px;
+                  }
+                  &:hover {
+                    color: $mainColor;
+                  }
+                }
+                p {
+                  font-size: 14px;
+                  line-height: 1.7;
+                  font-weight: 400;
+                  color: $paragraphColor;
+                  margin-bottom: 10px;
+                }
+                a {
+                  font-weight: 700;
+                  letter-spacing: 1.4px;
+                  font-size: 15px;
+                  color: $headingColor;
+                  cursor: pointer;
+                  transition: color $hoverTransition;
+                  text-transform: uppercase;
+                  &:hover {
+                    color: $mainColor;
+                  }
+                }
+              }
+              @include mediaQuery(meduim) {
+                .image {
+                  width: 70px;
+                  min-width: 70px;
+                }
+                .content {
+                  p.name {
+                    font-size: 20px;
+                    span {
+                      font-size: 13px;
+                    }
+                  }
+                  p {
+                    font-size: 16px;
+                    line-height: 1.8;
+                  }
+                  a {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+            > ol {
+              margin-left: 50px;
+            }
+          }
+        }
+        .reply {
+          padding: 30px 0;
+          border-top: 1px solid grey;
+          h2 {
+            color: $headingColor;
+          }
+          form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            div {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 20px;
+              input {
+                width: 100%;
+                padding: 7px 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                outline: none;
+                transition: border-color $hoverTransition;
+                color: $paragraphColor;
+                &:focus {
+                  border: 1px solid $mainColor;
+                }
+              }
+            }
+            textarea {
+              width: 100%;
+              height: 140px;
+              resize: none;
+              padding: 7px 10px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              outline: none;
+              transition: border-color $hoverTransition;
+              color: $paragraphColor;
+              &:focus {
+                border: 1px solid $mainColor;
+              }
+            }
+            button {
+              padding: 4px 10px;
+              border-radius: 3px;
+              font-size: 14px;
+              color: #fff;
+              border: 2px solid $mainColor;
+              outline: none;
+              background-color: $mainColor;
+              cursor: pointer;
+              text-transform: uppercase;
+              transition: background-color $hoverTransition,
+                color $hoverTransition;
+              &:hover {
+                background-color: transparent;
+                color: $mainColor;
+              }
+            }
+          }
+          @include mediaQuery(meduim) {
+            form {
+              div {
+                flex-direction: row;
+              }
+              button {
+                font-size: 17px;
+                padding: 4px 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sideBar {
+      width: 100%;
+      > div:not(.adds) {
+        margin-bottom: 40px;
+      }
+      .search {
+        z-index: 2;
+        overflow: hidden;
+        form {
+          position: relative;
+          width: 100%;
+          height: 45px;
+          input {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            transition: border $hoverTransition;
+            &:focus {
+              border: 1px solid $mainColor;
+            }
+          }
+          button {
+            position: absolute;
+            right: 10px;
+            top: 14px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            color: #ddd;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .categories {
+        h3 {
+          font-size: 24px;
+          color: $headingColor;
+          margin-bottom: 15px;
+          font-weight: 700;
+        }
+        ul li a {
+          font-size: 17px;
+          font-weight: 400;
+          display: block;
+          padding: 10px 0;
+          border-bottom: 1px solid $paragraphColor;
+          color: $paragraphColor;
+          transition: color $hoverTransition;
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+      .recent {
+        width: 100%;
+        h3 {
+          font-size: 24px;
+          color: $headingColor;
+          margin-bottom: 15px;
+          font-weight: 700;
+        }
+        .news {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          .image {
+            width: 110px;
+            height: 80px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .content {
+            flex: 3;
+            margin-left: 15px;
+            line-height: 1.5;
+            a {
+              display: block;
+              color: $headingColor;
+              font-size: 17px;
+              font-weight: 600;
+              transition: color $hoverTransition;
+              &:hover {
+                color: $mainColor;
+              }
+            }
+            span {
+              font-size: 13px;
+              font-weight: 500;
+              color: $paragraphColor;
+            }
+          }
+        }
+      }
+      .adds {
+        width: 100%;
+        a {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @include mediaQuery(large) {
+      flex-direction: row;
+      gap: 40px;
+      .blogDetailsContainer {
+        flex: 2;
+      }
+      .sideBar {
+        flex: 1;
+      }
+    }
+  }
+}
