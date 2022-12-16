@@ -5,9 +5,10 @@ import Service from "../Pages/Service";
 import Pricing from "../Pages/Pricing";
 import Blog from "../Pages/Blog";
 import BlogDetails from "../Pages/BlogDetails";
+import Contact from "../Pages/Contact";
 
 function App() {
-  return <Blog />;
+  return <Contact />;
 }
 
 export default App;
