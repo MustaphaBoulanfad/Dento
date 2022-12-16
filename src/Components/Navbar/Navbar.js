@@ -6,6 +6,7 @@ import Logo from "../../Assets/logo.webp";
 import InfoNav from "./InfoNav/InfoNav";
 import { useSelector, useDispatch } from "react-redux";
 import { changeInnerWidth } from "../../Store/MedicalSlice";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const innerWidth = useSelector((state) => state.innerWidth);
@@ -59,7 +60,14 @@ const Navbar = () => {
               <BsX onClick={() => togglenavMobile()} />
               <nav>
                 <li>
-                  <a href="">Home</a>
+                  <NavLink
+                    to="/"
+                    style={({ isActive }) =>
+                      isActive ? styles.active : undefined
+                    }
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li className={styles.hasDown} id="1">
                   <a href="">
@@ -67,36 +75,106 @@ const Navbar = () => {
                   </a>
                   <nav>
                     <li>
-                      <a href="">-Home</a>
+                      <NavLink
+                        to="/"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Home
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-About us</a>
+                      <NavLink
+                        to="/about"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -About us
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Service</a>
+                      <NavLink
+                        to="/service"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Service
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Pricing</a>
+                      <NavLink
+                        to="/pricing"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Pricing
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Blog</a>
+                      <NavLink
+                        to="/blog"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Blog
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Blog Details</a>
+                      <NavLink
+                        to="/blogdetails"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Blog Details
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Contact</a>
+                      <NavLink
+                        to="/contact"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Contact
+                      </NavLink>
                     </li>
                   </nav>
                 </li>
                 <li>
-                  <a href="">About</a>
+                  <NavLink
+                    to="/about"
+                    style={({ isActive }) =>
+                      isActive ? styles.active : undefined
+                    }
+                  >
+                    About
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="">Service</a>
+                  <NavLink
+                    to="/service"
+                    style={({ isActive }) =>
+                      isActive ? styles.active : undefined
+                    }
+                  >
+                    Service
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="">Pricing</a>
+                  <NavLink
+                    to="/pricing"
+                    style={({ isActive }) =>
+                      isActive ? styles.active : undefined
+                    }
+                  >
+                    Pricing
+                  </NavLink>
                 </li>
                 <li className={styles.hasDown} id="2">
                   <a href="">
@@ -104,15 +182,36 @@ const Navbar = () => {
                   </a>
                   <nav>
                     <li>
-                      <a href="">-Blog</a>
+                      <NavLink
+                        to="/blog"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Blog
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="">-Blog Details</a>
+                      <NavLink
+                        to="/blogdetails"
+                        style={({ isActive }) =>
+                          isActive ? styles.active : undefined
+                        }
+                      >
+                        -Blog Details
+                      </NavLink>
                     </li>
                   </nav>
                 </li>
                 <li>
-                  <a href="">Contact</a>
+                  <NavLink
+                    to="/contact"
+                    style={({ isActive }) =>
+                      isActive ? styles.active : undefined
+                    }
+                  >
+                    Contact
+                  </NavLink>
                 </li>
               </nav>
             </div>

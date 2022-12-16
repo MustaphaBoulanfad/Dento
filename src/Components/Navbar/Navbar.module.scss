@@ -145,6 +145,9 @@
               a:hover {
                 color: $mainColor;
               }
+              a:focus-visible {
+                outline: none;
+              }
               > a {
                 font-size: 15px;
                 padding: 10px;
