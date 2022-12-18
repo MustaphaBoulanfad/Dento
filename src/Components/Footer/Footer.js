@@ -94,19 +94,44 @@ const Footer = () => {
             </form>
             <div className={styles.icons}>
               <a href="#">
-                <FaFacebookF />
+                <div className={styles.wrapper}>
+                  <FaFacebookF aria-describedby="tp-container" />
+                  <div id="tp-container" role="tooltip">
+                    Faceook
+                  </div>
+                </div>
               </a>
               <a href="#">
-                <FaGooglePlusG />
+                <div className={styles.wrapper}>
+                  <FaGooglePlusG aria-describedby="tp-container" />
+                  <div id="tp-container" role="tooltip">
+                    Google
+                  </div>
+                </div>
               </a>
               <a href="#">
-                <FaTwitter />
+                <div className={styles.wrapper}>
+                  <FaTwitter aria-describedby="tp-container" />
+                  <div id="tp-container" role="tooltip">
+                    Twitter
+                  </div>
+                </div>
               </a>
               <a href="#">
-                <FaLinkedinIn />
+                <div className={styles.wrapper}>
+                  <FaLinkedinIn aria-describedby="tp-container" />
+                  <div id="tp-container" role="tooltip">
+                    LinkedIn
+                  </div>
+                </div>
               </a>
               <a href="#">
-                <FaPinterestP />
+                <div className={styles.wrapper}>
+                  <FaPinterestP aria-describedby="tp-container" />
+                  <div id="tp-container" role="tooltip">
+                    Pinterest
+                  </div>
+                </div>
               </a>
             </div>
           </div>

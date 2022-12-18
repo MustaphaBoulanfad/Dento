@@ -130,14 +130,44 @@ footer {
         }
       }
       .icons {
-        margin-top: 25px;
-        svg {
-          font-size: 20px;
-          color: #fff;
-          margin-right: 15px;
-          transition: color $hoverTransition;
+        margin-top: 40px;
+        a {
+          position: relative;
+
+          .wrapper {
+            position: relative;
+            display: inline;
+            [role="tooltip"] {
+              opacity: 0;
+              visibility: hidden;
+              position: absolute;
+              bottom: 120%;
+              left: -50%;
+              padding: 0 7px;
+              font-size: 14px;
+              height: 30px;
+              line-height: 30px;
+              background-color: #111;
+              border-radius: 5px;
+              color: #fff;
+              transition: opacity $hoverTransition, visibility $hoverTransition;
+            }
+          }
           &:hover {
             color: $mainColor;
+            .wrapper [role="tooltip"] {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          svg {
+            font-size: 18px;
+            color: #fff;
+            transition: color $hoverTransition;
+            margin-right: 15px;
+            &:hover {
+              color: $mainColor;
+            }
           }
         }
       }

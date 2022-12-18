@@ -14,7 +14,7 @@
       flex: 1;
       a {
         position: relative;
-        margin-right: 15px;
+        margin-right: 20px;
         svg {
           color: $mainColor;
         }
@@ -23,10 +23,42 @@
         }
       }
     }
+
     .icons {
-      svg {
+      a {
+        .wrapper {
+          position: relative;
+          display: inline;
+          [role="tooltip"] {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 80%;
+            left: -50%;
+            padding: 0 7px;
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #111;
+            border-radius: 5px;
+            color: #fff;
+            transition: opacity $hoverTransition, visibility $hoverTransition;
+          }
+        }
+        transition: color $hoverTransition;
+        position: relative;
         color: rgb(123, 121, 121);
-        margin-left: 5px;
+        &:hover {
+          color: $mainColor;
+          .wrapper [role="tooltip"] {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        svg {
+          margin-left: 10px;
+          font-size: 15px;
+        }
       }
     }
   }
@@ -39,11 +71,11 @@
           align-items: center;
           flex-direction: row;
           svg {
-            margin-right: 5px;
+            margin-right: 7px;
           }
           span {
             display: inline;
-            font-size: 16px;
+            font-size: 14px;
             color: rgb(123, 121, 121);
           }
         }

@@ -1,4 +1,5 @@
 import Navbar from "../Components/Navbar/Navbar";
+import Path from "../Components/Path/Path";
 import { Fragment } from "react";
 import Footer from "../Components/Footer/Footer";
 import DenamicHeader from "../Components/DenamicHeader/DenamicHeader";
@@ -9,6 +10,7 @@ const BlogDetails = () => {
     <Fragment>
       <Navbar />
       <DenamicHeader text={"Blog Details"} />
+      <Path />
       <BlogDetailsContainer />
       <Footer />
     </Fragment>

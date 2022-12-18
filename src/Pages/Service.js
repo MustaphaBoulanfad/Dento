@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar/Navbar";
 import { Fragment } from "react";
+import Path from "../Components/Path/Path";
 import Patients from "../Components/Patients/Patients";
 import Footer from "../Components/Footer/Footer";
 import DenamicHeader from "../Components/DenamicHeader/DenamicHeader";
@@ -11,6 +12,7 @@ const About = () => {
     <Fragment>
       <Navbar />
       <DenamicHeader text={"Service"} />
+      <Path />
       <Services />
       <Patients />
       <LatestNews />

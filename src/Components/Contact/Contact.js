@@ -9,6 +9,7 @@ const Contact = () => {
         <div className={styles.contactContainer}>
           <div className={styles.map}>
             <iframe
+              title="map"
               width="100%"
               height="600"
               id="gmap_canvas"

@@ -1,0 +1,28 @@
+@import "../../Helpers/mixins";
+@import "../../Helpers/variables";
+
+.path {
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  a {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+    color: $headingColor;
+    transition: color $hoverTransition;
+    &:hover {
+      color: $mainColor;
+    }
+    svg {
+      margin-right: 5px;
+    }
+  }
+  span {
+    color: $paragraphColor;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+}

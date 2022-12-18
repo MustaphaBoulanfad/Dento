@@ -14,18 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(changeInnerWidth(window.innerWidth));
-    const liHasDown = [...document.getElementsByClassName(styles.hasDown)];
-    if (innerWidth <= 800) {
-      liHasDown.forEach((element) => {
-        element.addEventListener("click", (event) => {
-          event.preventDefault();
-          element.id === "1"
-            ? element.childNodes[1].classList.toggle(styles.show1)
-            : element.childNodes[1].classList.toggle(styles.show2);
-        });
-      });
-    }
-  }, [dispatch, innerWidth]);
+  }, [dispatch]);
 
   window.addEventListener("resize", () => {
     dispatch(changeInnerWidth(window.innerWidth));
@@ -45,6 +34,18 @@ const Navbar = () => {
     let nav = document.getElementById("nav");
     nav.classList.toggle(styles.show);
   };
+
+  const liHasDown = [...document.getElementsByClassName(styles.hasDown)];
+  if (innerWidth <= 800) {
+    liHasDown.forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        element.id === "1"
+          ? element.nextElementSibling.classList.toggle(styles.show1)
+          : element.nextElementSibling.classList.toggle(styles.show2);
+      });
+    });
+  }
 
   return (
     <div className={styles.navbar}>
@@ -69,8 +70,8 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
-                <li className={styles.hasDown} id="1">
-                  <a href="">
+                <li>
+                  <a href="#" className={styles.hasDown} id="1">
                     Pages <BsChevronDown />
                   </a>
                   <nav>
@@ -176,8 +177,8 @@ const Navbar = () => {
                     Pricing
                   </NavLink>
                 </li>
-                <li className={styles.hasDown} id="2">
-                  <a href="">
+                <li>
+                  <a href="#" className={styles.hasDown} id="2">
                     Blog <BsChevronDown />
                   </a>
                   <nav>
