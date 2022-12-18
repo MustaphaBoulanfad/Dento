@@ -26,8 +26,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    // <Router basename={process.env.PUBLIC_URL}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Routes>
         <Route index element={<Home />} />
