@@ -52,10 +52,11 @@ section.about {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            h4 {
+            p {
               color: $headingColor;
               font-weight: 600;
               margin-bottom: 10px;
+              font-size: 18px;
             }
           }
           .bar {

@@ -71,16 +71,18 @@ const Footer = () => {
           <div className={styles.links}>
             <h3>Quick Links</h3>
             <nav>
-              <li>About</li>
-              <li>FAQs</li>
-              <li>Contact</li>
-              <li>Policy</li>
-              <li>News</li>
-              <li>Advisors</li>
-              <li>Careers</li>
-              <li>Dentist</li>
-              <li>Services</li>
-              <li>Legals</li>
+              <ul>
+                <li>About</li>
+                <li>FAQs</li>
+                <li>Contact</li>
+                <li>Policy</li>
+                <li>News</li>
+                <li>Advisors</li>
+                <li>Careers</li>
+                <li>Dentist</li>
+                <li>Services</li>
+                <li>Legals</li>
+              </ul>
             </nav>
           </div>
           <div className={styles.news}>
@@ -88,7 +90,7 @@ const Footer = () => {
             <p>We will send out weekly newest article and some great offers</p>
             <form>
               <input type="email" placeholder="Email Address" />
-              <button type="submit">
+              <button type="submit" aria-label="send">
                 <FaTelegramPlane />
               </button>
             </form>

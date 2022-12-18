@@ -11,7 +11,7 @@ const About = () => {
     return (
       <div className={styles.skill} key={skill.id}>
         <div className={styles.info}>
-          <h4>{skill.name}</h4>
+          <p>{skill.name}</p>
           <span>{`${skill.percentage}%`}</span>
         </div>
         <div className={styles.bar}>

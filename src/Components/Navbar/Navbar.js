@@ -60,160 +60,162 @@ const Navbar = () => {
             <div className={styles.nav} id="nav">
               <BsX onClick={() => togglenavMobile()} />
               <nav>
-                <li>
-                  <NavLink
-                    to="/"
-                    style={({ isActive }) =>
-                      isActive ? styles.active : undefined
-                    }
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <a href="#" className={styles.hasDown} id="1">
-                    Pages <BsChevronDown />
-                  </a>
-                  <nav>
-                    <li>
-                      <NavLink
-                        to="/"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Home
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/about"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -About us
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/service"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Service
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/pricing"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Pricing
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/blog"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Blog
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/blogdetails"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Blog Details
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/contact"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Contact
-                      </NavLink>
-                    </li>
-                  </nav>
-                </li>
-                <li>
-                  <NavLink
-                    to="/about"
-                    style={({ isActive }) =>
-                      isActive ? styles.active : undefined
-                    }
-                  >
-                    About
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/service"
-                    style={({ isActive }) =>
-                      isActive ? styles.active : undefined
-                    }
-                  >
-                    Service
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/pricing"
-                    style={({ isActive }) =>
-                      isActive ? styles.active : undefined
-                    }
-                  >
-                    Pricing
-                  </NavLink>
-                </li>
-                <li>
-                  <a href="#" className={styles.hasDown} id="2">
-                    Blog <BsChevronDown />
-                  </a>
-                  <nav>
-                    <li>
-                      <NavLink
-                        to="/blog"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Blog
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/blogdetails"
-                        style={({ isActive }) =>
-                          isActive ? styles.active : undefined
-                        }
-                      >
-                        -Blog Details
-                      </NavLink>
-                    </li>
-                  </nav>
-                </li>
-                <li>
-                  <NavLink
-                    to="/contact"
-                    style={({ isActive }) =>
-                      isActive ? styles.active : undefined
-                    }
-                  >
-                    Contact
-                  </NavLink>
-                </li>
+                <ul>
+                  <li>
+                    <NavLink
+                      to="/"
+                      style={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li>
+                    <a href="#" className={styles.hasDown} id="1">
+                      Pages <BsChevronDown />
+                    </a>
+                    <nav>
+                      <li>
+                        <NavLink
+                          to="/"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Home
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/about"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -About us
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/service"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Service
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/pricing"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Pricing
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Blog
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blogdetails"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Blog Details
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/contact"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Contact
+                        </NavLink>
+                      </li>
+                    </nav>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/about"
+                      style={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                    >
+                      About
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/service"
+                      style={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                    >
+                      Service
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/pricing"
+                      style={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                    >
+                      Pricing
+                    </NavLink>
+                  </li>
+                  <li>
+                    <a href="#" className={styles.hasDown} id="2">
+                      Blog <BsChevronDown />
+                    </a>
+                    <nav>
+                      <li>
+                        <NavLink
+                          to="/blog"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Blog
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blogdetails"
+                          style={({ isActive }) =>
+                            isActive ? styles.active : undefined
+                          }
+                        >
+                          -Blog Details
+                        </NavLink>
+                      </li>
+                    </nav>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/contact"
+                      style={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                    >
+                      Contact
+                    </NavLink>
+                  </li>
+                </ul>
               </nav>
             </div>
             <button className={styles.bookNow}>Booking Now</button>

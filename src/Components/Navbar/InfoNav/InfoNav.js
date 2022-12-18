@@ -26,42 +26,42 @@ const InfoNav = () => {
             </a>
           </div>
           <div className={styles.icons}>
-            <a href="#">
+            <a href="#" aria-label="facebook">
               <div className={styles.wrapper}>
-                <FaFacebookF aria-describedby="tp-container" />
-                <div id="tp-container" role="tooltip">
+                <FaFacebookF aria-describedby="tp-container1" />
+                <div id="tp-container1" role="tooltip">
                   Faceook
                 </div>
               </div>
             </a>
-            <a href="#">
+            <a href="#" aria-label="google">
               <div className={styles.wrapper}>
-                <FaGooglePlusG aria-describedby="tp-container" />
-                <div id="tp-container" role="tooltip">
+                <FaGooglePlusG aria-describedby="tp-container2" />
+                <div id="tp-container2" role="tooltip">
                   Google
                 </div>
               </div>
             </a>
-            <a href="#">
+            <a href="#" aria-label="twitter">
               <div className={styles.wrapper}>
-                <FaTwitter aria-describedby="tp-container" />
-                <div id="tp-container" role="tooltip">
+                <FaTwitter aria-describedby="tp-container3" />
+                <div id="tp-container3" role="tooltip">
                   Twitter
                 </div>
               </div>
             </a>
-            <a href="#">
+            <a href="#" aria-label="linkedin">
               <div className={styles.wrapper}>
-                <FaLinkedinIn aria-describedby="tp-container" />
-                <div id="tp-container" role="tooltip">
+                <FaLinkedinIn aria-describedby="tp-container4" />
+                <div id="tp-container4" role="tooltip">
                   LinkedIn
                 </div>
               </div>
             </a>
-            <a href="#">
+            <a href="#" aria-label="pinterest">
               <div className={styles.wrapper}>
-                <FaPinterestP aria-describedby="tp-container" />
-                <div id="tp-container" role="tooltip">
+                <FaPinterestP aria-describedby="tp-container5" />
+                <div id="tp-container5" role="tooltip">
                   Pinterest
                 </div>
               </div>
